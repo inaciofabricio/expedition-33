@@ -1,0 +1,52 @@
+.main {
+    padding: 2em 3em;   
+}
+
+.menu {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.menu-item {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: blue;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.encontrados {
+    background-color: green;
+}
+
+.nao-encontrados {
+    background-color: brown;
+}
+
+.pictos {
+    padding: 8px 0;
+}
+
+.item {
+    display: flex;
+    gap: 8px;
+    padding: 4px;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.item-nome {
+    flex-grow: 1;
+}
+
+@media (max-width: 450px) {
+    .main {
+        padding: 10px 15px;
+    }
+}

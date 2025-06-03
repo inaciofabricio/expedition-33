@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedition 33</title>
+    <link rel="stylesheet" href="./assets/css/estilo.css">
+</head>
+<body>
+    <section class="main">
+        <h1>Expedition 33 - Pictos</h1>
+        <div class="menu">
+            <span class="menu-item" id="todos" onclick="getTodos()">Todos</span>
+            <span class="menu-item encontrados" id="encontrado" onclick="getEncontrados()">Encontrados</span>
+            <span class="menu-item nao-encontrados" id="naoEncontrado" onclick="getNaoEncontrados()">Não Encontrados</span>
+        </div>
+        <div class="pictos" id="pictos"></div>
+    </section>
+    
+    <script src="./assets/js/constants/pictos.js"></script>
+    <script src="./assets/js/services/pictoService.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
