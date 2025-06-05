@@ -2,6 +2,23 @@
     padding: 2em 3em;   
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    padding: 12px 4px;
+}
+
+.titulo {
+    margin: 0;
+}
+
+.icone-limpeza {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
 .menu {
     display: flex;
     gap: 8px;

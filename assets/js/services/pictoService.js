@@ -1,7 +1,5 @@
 function getPictos(pictos) {
-    console.log(pictos)
     return pictos.sort((a, b) => {
-        console.log(a, b)
         const nameA = limpaString(a.nome);
         const nameB = limpaString(b.nome);
     

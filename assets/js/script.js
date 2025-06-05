@@ -1,16 +1,3 @@
-let pictos = JSON.parse(localStorage.getItem("pictos"));
-let musicas = JSON.parse(localStorage.getItem("musicas"));
-
-if(!pictos) {
-    pictos = getPictos(PICTOS)
-    localStorage.setItem("pictos", JSON.stringify(pictos))
-}
-
-if(!musicas) {
-    musicas = getMusicas(MUSICAS)
-    localStorage.setItem("musicas", JSON.stringify(musicas))
-}
-
 const baseUrlYoutube = "https://www.youtube.com/watch?v=";
 const youtubePictos = "_Hw9tF3760o";
 const youtubeMusicas = "QUWNNePEZgs";
@@ -24,9 +11,47 @@ const naoEncontradoElement = document.getElementById("naoEncontrado");
 const quantidadeTotalElement = document.getElementById("quantidade-total");
 const quantidadeAtualElement = document.getElementById("quantidade-atual");
 
-let categoria = "";
-let view = "";
+let categoria = "pictos";
+let view = "todos";
 let canal = "";
+
+let pictos = [];
+let musicas = [];
+
+function iniciar() {
+
+    pictos = JSON.parse(localStorage.getItem("pictos"));
+    musicas = JSON.parse(localStorage.getItem("musicas"));
+
+    if(!pictos) {
+        pictos = getPictos(PICTOS)
+        localStorage.setItem("pictos", JSON.stringify(pictos))
+    }
+    
+    if(!musicas) {
+        musicas = getMusicas(MUSICAS)
+        localStorage.setItem("musicas", JSON.stringify(musicas))
+    }
+
+    if(categoria === "pictos") {
+        setPictos();
+    } else if(categoria === "musicas") {
+        setMusicas();
+    }
+
+    atualizar();
+}
+
+
+function limpar() {
+
+    localStorage.removeItem("pictos");
+    localStorage.removeItem("musicas");
+    pictos = [];
+    musicas = [];
+
+    iniciar();
+}
 
 function setPictos() {
 
@@ -79,7 +104,7 @@ function selecionar() {
 }
 
 function atualizar() {
- 
+
     if(view === "todos") {
         setTodos();
     } else if(view === "encontrados") {
@@ -94,8 +119,7 @@ function setTodos() {
     todosElement.classList = ["menu-item ativo"];
     encontradoElement.classList = ["menu-item inativo"];
     naoEncontradoElement.classList = ["menu-item inativo"];
-    
-    view = "todos";    
+       
     dadosElement.innerHTML = "";
 
     if(categoria == "pictos") {
@@ -186,5 +210,4 @@ function setLinha(item) {
     dadosElement.append(div);
 }
 
-setPictos();
-atualizar();
+iniciar();
