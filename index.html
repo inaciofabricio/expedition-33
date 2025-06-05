@@ -9,17 +9,32 @@
 </head>
 <body>
     <section class="main">
-        <h1>Expedition 33 - Pictos</h1>
-        <div class="menu">
-            <span class="menu-item" id="todos" onclick="getTodos()">Todos</span>
-            <span class="menu-item encontrados" id="encontrado" onclick="getEncontrados()">Encontrados</span>
-            <span class="menu-item nao-encontrados" id="naoEncontrado" onclick="getNaoEncontrados()">Não Encontrados</span>
+        <div>
+            <h1>Expedition 33</h1>
         </div>
-        <div class="pictos" id="pictos"></div>
+        <div class="menu">
+            <span class="menu-item" id="menu-pictos" onclick="setPictos()">Pictos</span>
+            <span class="menu-item" id="menu-musicas" onclick="setMusicas()">Músicas</span>
+        </div>
+        <div class="hr"></div>
+        <div class="menu">
+            <span class="menu-item" id="todos" onclick="setTodos()">Todos</span>
+            <span class="menu-item encontrados" id="encontrado" onclick="setEncontrados()">Encontrados</span>
+            <span class="menu-item nao-encontrados" id="naoEncontrado" onclick="setNaoEncontrados()">Não Encontrados</span>
+        </div>
+        <div class="quantidade">
+            <span id="quantidade-atual">0</span>
+            <span>/</span>
+            <span id="quantidade-total">0</span>
+        </div>
+        <div class="dados" id="dados"></div>
     </section>
     
     <script src="./assets/js/constants/pictos.js"></script>
+    <script src="./assets/js/constants/musicas.js"></script>
+    <script src="./assets/js/services/utils.js"></script>
     <script src="./assets/js/services/pictoService.js"></script>
+    <script src="./assets/js/services/musicaService.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
