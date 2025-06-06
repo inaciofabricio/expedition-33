@@ -47,8 +47,13 @@ function limpar() {
 
     localStorage.removeItem("pictos");
     localStorage.removeItem("musicas");
+    
     pictos = [];
     musicas = [];
+
+    categoria = "pictos";
+    view = "todos";
+    dadosElement.innerHTML = "";
 
     iniciar();
 }
